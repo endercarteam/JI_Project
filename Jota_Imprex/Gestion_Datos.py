@@ -88,7 +88,51 @@ class Pendientes(Gestion_Datos):
                          
                             
                 else:
-                    Categoria == 4:                     
+                    if Categoria == 4: 
+                        Cat = str("Fotocopias")
+                        print("seleccione una de las siguientes opciones: \n1. Blanco y negro\n2. Color\n3. Al por mayor(Mas de 400 fotocopias)")  
+                        F = int(input())
+                        if F == 1:
+                            Tipo = str("Fotocopia a blanco y negro")
+                            print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
+                            Cant = int(input())
+                            Price = Fotocopias.BlancoyNegro(Cant)
+                            print(f"El precio a pagar por sus fotocopias es: ", Price)
+                        else:
+                            if F == 2:
+                                Tipo = str("Fotocopia a blanco y negro")
+                                print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
+                                Cant = int(input())
+                                Price = Fotocopias.BlancoyNegro(Cant)
+                                print(f"El precio a pagar por sus fotocopias es: ", Price)
+                            else:
+                                if F ==3:
+                                    Tipo = str("Fotocopias al por mayor")
+                                    print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
+                                    Cant = int(input())
+                                    Price = Fotocopias.Pormayor(Cant)
+                                    print(f"El precio a pagar por sus fotocopias es: ", Price)    
+                    else:
+                        if Categoria == 5:
+                            Cat = str("Edicion y Reparacion")
+                            print("seleccione una de las siguientes opciones: \n1. Edicion \n2. Reparacion")    
+                            F = int(input())
+                            if F == 1:
+                                Tipo = str("Edicion Normal")
+                                print("Por favor ingrese a continuacion la cantidad de fotos a editar: ")
+                                Cant = int(input())
+                                Price = Edicion.EN(Cant)
+                                print(f"El precio a pagar es: ", Price) 
+                            else:
+                                if F == 2:
+                                    ipo = str("Edicion Normal")
+                                print("Por favor ingrese a continuacion la cantidad de fotos a restaurar: ")
+                                Cant = int(input())
+                                Price = Edicion.EN(Cant)
+                                print(f"El precio a pagar es: ", Price)             
+
+
+
 
         Pendiente = {"nombre": nombre,"Categoria":Cat,"Tipo": Tipo, "Cantidad": Cant, "Precio": Price}
 
