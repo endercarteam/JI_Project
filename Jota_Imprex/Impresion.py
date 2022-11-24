@@ -3,21 +3,21 @@ class Impresion:
         self.Cantidad = Cantidad
         self.Tipo=str
         self.Precio = int
-
+    @classmethod
     def BlancoyNegro(self, Cantidad):
         self.Cantidad = Cantidad
         self.Tipo= "Blanco y Negro"
         self.Precio = 600
         ToT = self.Cantidad * self.Precio
         return ToT
-
+    @classmethod
     def Color(self, Cantidad):
         self.Cantidad = Cantidad
         self.Tipo= "Color"
         self.Precio = 1200
         ToT = self.Cantidad * self.Precio
         return ToT
-
+    @classmethod
     def Pormayor(self, Cantidad):
         self.Cantidad = Cantidad
         self.Tipo= "Fotos al por mayor"
