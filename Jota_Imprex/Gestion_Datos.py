@@ -4,6 +4,7 @@ from Fotos import Fotos
 from Servicio_Fotografico import Servicio_Fotografico
 from Impresion import Impresion
 from Edicion import Edicion
+from Fotocopias import Fotocopias
 
 
 class Gestion_Datos(abc.ABC):
@@ -20,7 +21,7 @@ class Pendientes(Gestion_Datos):
     def add_Data(self)-> None:
         print("Digite el nombre del cliente")
         nombre = str(input())
-        print("escoja a continuacion la categoria:\n1.Impresion de Fotos\n2. Servicio Fotografico\n3.Impresion\n4.Fotocopia\n7.Edicion de fotos\n8s.Reparacion de fotos")
+        print("escoja a continuacion la categoria:\n1.Impresion de Fotos\n2. Servicio Fotografico\n3.Impresion\n4.Fotocopia\n5.Edicion de fotos o Reparacion de fotos")
         Categoria = int(input())
         if Categoria == 1:
             Cat = str("Fotos")
@@ -84,13 +85,10 @@ class Pendientes(Gestion_Datos):
                             Cant = int(input())
                             Price = Impresion.Color(Cant)
                             print(f"El precio a pagar por sus impresiones es: ", Price)        
-                        else: 
-                            if F== 3:
-                                Tipo = str("Impresiones al por mayor")
-                                print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
-                                Cant = int(input())
-                                Price = Impresion.Pormayor(Cant)
-                                print(f"El precio a pagar por sus impresiones es: ", Price)     
+                         
+                            
+                else:
+                    Categoria == 4:                     
 
         Pendiente = {"nombre": nombre,"Categoria":Cat,"Tipo": Tipo, "Cantidad": Cant, "Precio": Price}
 
