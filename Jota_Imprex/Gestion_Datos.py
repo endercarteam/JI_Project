@@ -1,5 +1,13 @@
 import json
 import abc
+from Fotos import Fotos
+from Servicio_Fotografico import Servicio_Fotografico
+Fotos10x15 = Fotos.Fotos10x15
+Fotos13x18 = Fotos.Fotos13x18
+Fotos20x25 = Fotos.Fotos20x25
+Fotos8 = Servicio_Fotografico.Fotos8
+Fotos12 = Servicio_Fotografico.Fotos12
+Fotos24 = Servicio_Fotografico.Fotos24
 class Gestion_Datos(abc.ABC):
     @abc.abstractclassmethod
     def add_Data(self)->None:
@@ -14,7 +22,7 @@ class Pendientes(Gestion_Datos):
     def add_Data(self)-> None:
         print("Digite el nombre del cliente")
         nombre = input()
-        print("escoja a continuacion la categoria:\n1.Fotos\n2.Impresion\n3.Fotocopia\n4.Escaneo\n5.Hoja de vida\n6.Edicion de fotos\n7.Reparacion de fotos")
+        print("escoja a continuacion la categoria:\n1.Impresion de Fotos\n2. Servicio Fotografico\n3.Impresion\n4.Fotocopia\n5.Escaneo\n6.Hoja de vida\n7.Edicion de fotos\n8s.Reparacion de fotos")
         Categoria = input()
         if Categoria == 1:
             Cat = "Fotos"
