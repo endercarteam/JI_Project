@@ -5,6 +5,8 @@ from Servicio_Fotografico import Servicio_Fotografico
 from Impresion import Impresion
 from Edicion import Edicion
 from Fotocopias import Fotocopias
+Archivo_Pendientes = "PPendientes.json"
+
 
 
 class Gestion_Datos(abc.ABC):
@@ -28,21 +30,21 @@ class Pendientes(Gestion_Datos):
             print("seleccione una de las siguientes opciones:\n1. Foto 10x15cm\n2. Fotos 13x18\n3. Fotos 20x25")
             F = int(input())
             if F == 1:
-                Tipo: str("Tamaño 10x15")
+                Tipo= str("Tamaño 10x15")
                 print("Digite la cantidad de Fotos que requiere")
                 Cant = int(input())
                 Price = Fotos.Fotos10x15(Cant)
                 print (F"El precio a pagar es: ", Price)
             else: 
                 if F ==2:
-                    Tipo: str("Tamaño 13x18")
+                    Tipo = str("Tamaño 13x18")
                     print("Digite la cantidad de Fotos que requiere")
                     Cant = int(input())
                     Price = Fotos.Fotos13x18(Cant)
                     print (F"El precio a pagar es: ", Price)
                 else: 
                     if F == 3:
-                        Tipo: str("Tamaño 20x25")
+                        Tipo= str("Tamaño 20x25")
                         print("Digite la cantidad de Fotos que requiere")
                         Cant = int(input())
                         Price = Fotos.Fotos20x25(Cant)
@@ -55,17 +57,21 @@ class Pendientes(Gestion_Datos):
                 if F ==1:
                     Tipo = str("8 Fotos")
                     Price = Servicio_Fotografico.Fotos8()
+                    Cant = 8
                     print(f"El precio a pagar es: ", Price)     
 
                 else:
                     if F == 2:
                         Tipo = str("12 Fotos")
                         Price = Servicio_Fotografico.Fotos12()
+                        Cant = 12
                         print(f"El precio a pagar es: ", Price)
                     else:
                         if F ==3:    
                             Tipo = str("24 Fotos")
+                            Cant = 24
                             Price = Servicio_Fotografico.Fotos24()
+                            
                             print(f"El precio a pagar es: ", Price)
             else:
                 if Categoria == 3:
@@ -134,7 +140,14 @@ class Pendientes(Gestion_Datos):
 
 
 
-        Pendiente = {"nombre": nombre,"Categoria":Cat,"Tipo": Tipo, "Cantidad": Cant, "Precio": Price}
+        Pendiente = {"nombre": str(nombre),"Categoria":str(Cat),"Tipo": str(Tipo), "Cantidad": int(Cant), "Precio": (Price)}
+        
+        
+        with open(Archivo_Pendientes, "r+") as file:
+            data = json.load(file)
+            data.append(Pendiente)    
+            file.seek(0)
+            json.dump(data,file)
 
     def show_Data(self)->None:
         ...     
