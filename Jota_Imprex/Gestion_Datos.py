@@ -2,14 +2,14 @@ import json
 import abc
 class Gestion_Datos(abc.ABC):
     @abc.abstractclassmethod
-    def actualizar(self)->None:
+    def add_Data(self)->None:
         ...
 
 
 class Pendientes(Gestion_Datos):
-    def actualizar(self)-> None:
+    def add_Data(self)-> None:
         pass
 
 class Completados(Gestion_Datos):
-    def actualizar(self)-> None:
+    def add_Data(self)-> None:
         pass           
