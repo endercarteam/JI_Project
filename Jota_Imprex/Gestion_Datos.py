@@ -28,7 +28,7 @@ class Pendientes(Gestion_Datos):
         Categoria = int(input())
         if Categoria == 1:
             Cat = str("Fotos")
-            print("seleccione una de las siguientes opciones:\n1. Foto 10x15cm\n2. Fotos 13x18\n3. Fotos 20x25")
+            print("seleccione una de las siguientes opciones:\n1. Foto 10x15cm\n2. Fotos 13x18\n3. Fotos 20x25\n4. Fotos2x4")
             F = int(input())
             if F == 1:
                 Tipo= str("Tamaño 10x15")
@@ -50,6 +50,14 @@ class Pendientes(Gestion_Datos):
                         Cant = int(input())
                         Price = Fotos.Fotos20x25(Cant)
                         print (F"El precio a pagar es: ", Price)
+                    else:
+                        if F==4:
+                            Tipo= str("Tamaño 3x4")
+                            
+                            Cant = 6
+                            Price = Fotos.Fotos20x25(Cant)
+                            print (F"El precio a pagar es: ", Price)
+
         else: 
             if Categoria == 2:
                 Cat = str("Servicio Fotografico")
