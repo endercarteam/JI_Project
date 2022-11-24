@@ -6,6 +6,7 @@ from Impresion import Impresion
 from Edicion import Edicion
 from Fotocopias import Fotocopias
 Archivo_Pendientes = "PPendientes.json"
+Archivo_Completados = "PCompletados.json"
 
 
 
@@ -150,11 +151,23 @@ class Pendientes(Gestion_Datos):
             json.dump(data,file)
 
     def show_Data(self)->None:
-        ...     
-
+      with open(Archivo_Pendientes, "r") as file:
+            data = json.load(file) 
+            print (data)        
 class Completados(Gestion_Datos):
     def add_Data(self)-> None:
-        pass 
+        
+        print ("Digite el diccionario que quiere pasar a la lista de Completados:")
+        Pass_to = str(input())
+
+        with open(Archivo_Completados, "r+") as file:
+            data = json.load(file)
+            data.append(Pass_to)    
+            file.seek(0)
+            json.dump(data,file)
+    
 
     def show_Data(self)->None:
-        ...           
+        with open(Archivo_Completados, "r") as file:
+            data = json.load(file) 
+            print (data)
