@@ -1,1 +1,56 @@
+@startuml
+class abc.ABC{
+}
+Abstract Gestion_Datos{
+{Abstract} show_Data()
+{Abstract} add_Data()
 
+}
+class Pendientes{
+add_Data()
+show_Data()
+}
+class Completados{
+show_Data()
+add_Data()
+}
+class Fotos{
+tamaño:str
+cantidad:str
+precio:int
+Fotos10x15(Cantidad)
+Fotos13x18(Cantidad)
+Fotoa20x25(Cantidad)
+Fotos3x4()
+}
+class Impresion{
+Cantidad: int
+Tipo: str
+Precio:int
+BlancoyNegro(Cantidad)
+Color(Cantidad)
+}
+class Fotocopias{
+Cantidad:int
+Tipo:str
+Precio:int
+BlancoyNegro(Cantidad)
+Color(Cantidad)
+Pormayor(Cantidad)
+}
+class Servicio_Fotografico{
+Cantidad:int
+Precio:int
+Fotos8()
+Fotos12()
+Fotos24()
+
+}
+Gestion_Datos <|-- Servicio_Fotografico
+Gestion_Datos <|-- Fotocopias
+Gestion_Datos <|-- Impresion
+Gestion_Datos <|-- Fotos
+Gestion_Datos <|-- Pendientes
+Gestion_Datos <|--Completados
+abc.ABC <|-- Gestion_Datos
+@enduml
