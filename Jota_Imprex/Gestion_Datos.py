@@ -20,7 +20,7 @@ class Pendientes(Gestion_Datos):
     def add_Data(self)-> None:
         print("Digite el nombre del cliente")
         nombre = str(input())
-        print("escoja a continuacion la categoria:\n1.Impresion de Fotos\n2. Servicio Fotografico\n3.Impresion\n4.Fotocopia\n5.Escaneo\n6.Hoja de vida\n7.Edicion de fotos\n8s.Reparacion de fotos")
+        print("escoja a continuacion la categoria:\n1.Impresion de Fotos\n2. Servicio Fotografico\n3.Impresion\n4.Fotocopia\n7.Edicion de fotos\n8s.Reparacion de fotos")
         Categoria = int(input())
         if Categoria == 1:
             Cat = str("Fotos")
@@ -69,7 +69,29 @@ class Pendientes(Gestion_Datos):
             else:
                 if Categoria == 3:
                     Cat = str("Impresion")
-                    print("seleccione una de las siguientes opciones:\n1. 8 Fotos \n2. 12 Fotos \n3. 24 Fotos")                    
+                    print("seleccione una de las siguientes opciones: \n1. Blanco y negro\n2. Color\n3. Al por mayor(Mas de 400 impresiones)")  
+                    F = int(input())
+                    if F == 1:
+                        Tipo = str("Impresion a blanco y negro")
+                        print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
+                        Cant = int(input())
+                        Price = Impresion.BlancoyNegro(Cant)
+                        print(f"El precio a pagar por sus impresiones es: ", Price)
+                    else:
+                        if F==2:
+                            Tipo = str("Impresion a color")
+                            print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
+                            Cant = int(input())
+                            Price = Impresion.Color(Cant)
+                            print(f"El precio a pagar por sus impresiones es: ", Price)        
+                        else: 
+                            if F== 3:
+                                Tipo = str("Impresiones al por mayor")
+                                print("Por favor ingrese a continuacion la cantidad de impresiones que necesita: ")
+                                Cant = int(input())
+                                Price = Impresion.Pormayor(Cant)
+                                print(f"El precio a pagar por sus impresiones es: ", Price)     
+
         Pendiente = {"nombre": nombre,"Categoria":Cat,"Tipo": Tipo, "Cantidad": Cant, "Precio": Price}
 
     def show_Data(self)->None:
