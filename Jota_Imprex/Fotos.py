@@ -11,5 +11,16 @@ class Fotos:
         Costo = self.Cantidad * self.Precio
         return Costo
         
-    def Fotos13x18(self):
-        pass      
+    def Fotos13x18(self, Cant):
+        self.Tamaño = "13x18"
+        self.Cantidad = Cant
+        self.Precio = 16000 
+        Costo = self.Cantidad * self.Precio
+        return Costo
+
+    def Fotos20x25(self, Cant):
+        self.Tamaño = "20x25"
+        self.Cantidad = Cant
+        self.Precio = 18000 
+        Costo = self.Cantidad * self.Precio
+        return Costo
