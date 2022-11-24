@@ -46,10 +46,18 @@ Fotos12()
 Fotos24()
 
 }
-Gestion_Datos <|-- Servicio_Fotografico
-Gestion_Datos <|-- Fotocopias
-Gestion_Datos <|-- Impresion
-Gestion_Datos <|-- Fotos
+class Edicion{
+Tipo:str
+Cantidad:int
+Precio:int
+EN(Cantidad)
+Reparacion(Reparacion)
+}
+Gestion_Datos --|> Edicion
+Gestion_Datos --|> Servicio_Fotografico
+Gestion_Datos --|> Fotocopias
+Gestion_Datos --|> Impresion
+Gestion_Datos --|> Fotos
 Gestion_Datos <|-- Pendientes
 Gestion_Datos <|--Completados
 abc.ABC <|-- Gestion_Datos
