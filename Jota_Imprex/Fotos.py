@@ -27,7 +27,7 @@ class Fotos:
         return Costo
     @classmethod
     def Fotos3x4(self):
-        self.Tamaño = "20x25"
+        self.Tamaño = "3x4"
         self.Cantidad = 6
         self.Precio = 15000 
         Costo =  self.Precio
