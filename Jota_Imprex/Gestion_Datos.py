@@ -55,7 +55,7 @@ class Pendientes(Gestion_Datos):
                             Tipo= str("Tamaño 3x4")
                             
                             Cant = 6
-                            Price = Fotos.Fotos20x25(Cant)
+                            Price = Fotos.Fotos3x4(Cant)
                             print (F"El precio a pagar es: ", Price)
 
         else: 
